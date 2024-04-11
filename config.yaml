@@ -1,0 +1,24 @@
+inputmodels:
+  format: "ecore"
+  metamodelpath: "E:\\Project\\encoding\\Encoding1401\\DSL-Improved\\TCRMG\\ecore\\metamodel\\ecore.ecore"
+  modelspath: "E:\\Project\\encoding\\Encoding1401\\DSL-Improved\\TCRMG\\ecore\\models"
+output: "PyG"
+adaptations:
+  metamodels:
+    packages:
+      ecore:
+          uri:
+            http://www.eclipse.org/emf/2002/Ecore:
+              classes:
+#                include: ["EPackage","EClassifier", "EDataType", "EReference"]
+                exclude: ["EAnnotation"]
+                excludeAllAttributes: False
+                EClass:
+                  features:
+                    abstract:
+                      encoding: "one-hot"
+                EReference:
+                  features:
+                    name:
+                      encoding: "word2vec"
+
