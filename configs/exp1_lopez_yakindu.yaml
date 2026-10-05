@@ -1,0 +1,34 @@
+# Experiment 1 -- replicating the Yakindu encoder of Lopez & Cuadrado (TCRMG-GNN,
+# MetaFilterNames.getYakinduFilter()).
+# Dataset: 377 Yakindu statechart .sct files (realModels/Yakindu), instances of
+# the full Yakindu metamodel set (metamodels/yakindu/*.ecore).
+# Node classes kept (supertype-aware): CompositeElement (Statechart),
+#   Region, RegularState (State, FinalState), Pseudostate (Entry, Exit,
+#   Choice, Synchronization), Transition.
+# References kept: regions, vertices, incomingTransitions,
+#   outgoingTransitions, source, target.
+# Attributes: none in the graph structure (as in the published graphs).
+input:
+  format: "xmi"
+  metamodelpath: "F:/Paper Preprocessing/Pre_Processing_Modeling_Artefacts_for_Graph_Neural_Networks__A_DSL_for_Model_Encoding/Codes/MoEGL-v2/metamodels/yakindu"
+  modelspath: "E:/Project/TCRMG-GNN-1.0.0/realModels/Yakindu"
+  extension: ".sct"          # Yakindu models use the .sct extension
+output:
+  format: "NetworkX"
+adaptations:
+  metamodels:
+    packages:
+      yakindu:
+        uri:
+          http://www.yakindu.org/sct/sgraph/2.0.0:
+            classes:
+              include: ["Transition", "Pseudostate", "RegularState", "Region", "CompositeElement"]
+              includeAllAttributes: false
+              CompositeElement:
+                include: ["regions"]
+              Region:
+                include: ["vertices"]
+              Vertex:
+                include: ["incomingTransitions", "outgoingTransitions"]
+              Transition:
+                include: ["source", "target"]

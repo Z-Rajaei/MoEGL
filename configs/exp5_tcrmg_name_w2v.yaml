@@ -1,0 +1,40 @@
+# Experiment 5 -- TCRMG real vs synthetic Ecore, name + structure.
+input:
+  format: "ecore"
+  metamodelpath: ""
+  modelspath: "E:/Project/TCRMG-GNN-1.0.0/realModels/Ecore"
+output:
+  format: "NetworkX"
+word2vec_dim: 64
+seed: 42
+adaptations:
+  metamodels:
+    packages:
+      ecore:
+        uri:
+          http://www.eclipse.org/emf/2002/Ecore:
+            classes:
+              include: ["EClassifier", "EStructuralFeature", "EPackage", "EEnumLiteral"]
+              includeAllAttributes: false
+              ENamedElement:
+                features:
+                  name:
+                    encoding: "word2vec"
+              EPackage:
+                include: ["eClassifiers", "name"]
+              EClassifier:
+                include: ["ePackage", "name"]
+              EClass:
+                include: ["ePackage", "eStructuralFeatures", "eSuperTypes", "name"]
+              EEnum:
+                include: ["ePackage", "eLiterals", "name"]
+              EEnumLiteral:
+                include: ["eEnum", "name"]
+              EStructuralFeature:
+                include: ["eContainingClass", "eType", "name"]
+              EReference:
+                include: ["eContainingClass", "eType", "eOpposite", "name"]
+              EAttribute:
+                include: ["eContainingClass", "eType", "name"]
+              EDataType:
+                include: ["ePackage", "name"]

@@ -1,0 +1,41 @@
+# ModelSet classification: names (word2vec) plus structural attributes that a
+# bag-of-names encoding does not see (multiplicity, containment, abstract, ...).
+input:
+  format: "ecore"
+  metamodelpath: ""
+  modelspath: "F:/Paper Preprocessing/Pre_Processing_Modeling_Artefacts_for_Graph_Neural_Networks__A_DSL_for_Model_Encoding/Codes/MoEGL-v2/experiments/data/modelset_ecore/models"
+output:
+  format: "NetworkX"
+word2vec_dim: 128
+seed: 42
+adaptations:
+  metamodels:
+    packages:
+      ecore:
+        uri:
+          http://www.eclipse.org/emf/2002/Ecore:
+            classes:
+              include: ["EClassifier", "EStructuralFeature", "EPackage", "EEnumLiteral"]
+              includeAllAttributes: false
+              ENamedElement:
+                features:
+                  name:
+                    encoding: "word2vec"
+              EPackage:
+                include: ["eClassifiers", "name"]
+              EClassifier:
+                include: ["ePackage", "name"]
+              EClass:
+                include: ["ePackage", "eStructuralFeatures", "eSuperTypes", "name", "abstract", "interface"]
+              EEnum:
+                include: ["ePackage", "eLiterals", "name"]
+              EEnumLiteral:
+                include: ["eEnum", "name"]
+              EDataType:
+                include: ["ePackage", "name"]
+              EStructuralFeature:
+                include: ["eContainingClass", "eType", "eTypeName", "name", "lowerBound", "upperBound", "derived", "ordered", "unique", "changeable", "transient", "volatile"]
+              EAttribute:
+                include: ["eContainingClass", "eType", "eTypeName", "name", "lowerBound", "upperBound", "derived", "ordered", "unique", "iD"]
+              EReference:
+                include: ["eContainingClass", "eType", "eTypeName", "eOpposite", "name", "containment", "lowerBound", "upperBound", "derived", "ordered", "unique", "changeable"]

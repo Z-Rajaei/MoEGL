@@ -1,0 +1,26 @@
+input:
+  format: "ecore"
+  metamodelpath: ""
+  modelspath: "examples/running_fsm"
+output:
+  format: "HPyG"
+adaptations:
+  metamodels:
+    packages:
+      ecore:
+        uri:
+          http://www.eclipse.org/emf/2002/Ecore:
+            classes:
+              includeAllAttributes: false
+              EClass:
+                include: ["name", "abstract", "eStructuralFeatures"]
+                features:
+                  name:
+                    encoding: "word2vec"
+                  abstract:
+                    encoding: "one-hot"
+              EAttribute:
+                include: ["name", "eContainingClass"]
+                features:
+                  name:
+                    encoding: "word2vec"

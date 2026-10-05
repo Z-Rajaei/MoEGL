@@ -1,0 +1,137 @@
+{
+  "protocol": "N fresh processes, all Java then all MoEGL, Ecore 500. Same commands as time_lopez (TimeLopezAll ecore, no JSON output) and time_moegl.py on exp1_lopez_ecore.yaml. Every 20 ms the process tree is sampled with psutil (PeakWorkingSetSize and PeakPagefileUsage). The reported peak is the maximum of the tree, which is the worker process: java.exe, or the base python.exe spawned by the venv launcher.",
+  "timestamp": "2026-10-03 18:45:49",
+  "python": "3.10.9",
+  "n": 10,
+  "lopez_java": {
+    "peak_working_set_bytes": {
+      "mean": 248070553.6,
+      "sd": 10571977.006965907,
+      "n": 10,
+      "values": [
+        256077824,
+        242671616,
+        248610816,
+        253890560,
+        266911744,
+        257220608,
+        230256640,
+        241635328,
+        242053120,
+        241377280
+      ]
+    },
+    "peak_pagefile_bytes": {
+      "mean": 1003516723.2,
+      "sd": 11326151.08673026,
+      "n": 10,
+      "values": [
+        1013157888,
+        1002983424,
+        1004494848,
+        1007071232,
+        1024663552,
+        1012142080,
+        987009024,
+        993021952,
+        993210368,
+        997412864
+      ]
+    },
+    "process_ms": {
+      "mean": 1877.7401900006225,
+      "sd": 56.27969965386501,
+      "n": 10,
+      "values": [
+        1899.8702999961097,
+        1913.7920000066515,
+        1862.5376999843866,
+        1847.8161999955773,
+        2019.0738000092097,
+        1842.9114000173286,
+        1869.52680000104,
+        1846.5659999928903,
+        1846.2925000058021,
+        1829.0151999972295
+      ]
+    },
+    "worker_names": [
+      "java.exe",
+      "java.exe",
+      "java.exe",
+      "java.exe",
+      "java.exe",
+      "java.exe",
+      "java.exe",
+      "java.exe",
+      "java.exe",
+      "java.exe"
+    ]
+  },
+  "moegl": {
+    "peak_working_set_bytes": {
+      "mean": 160933478.4,
+      "sd": 235061.07790822745,
+      "n": 10,
+      "values": [
+        160858112,
+        160473088,
+        160718848,
+        160976896,
+        160972800,
+        160907264,
+        161366016,
+        161112064,
+        161034240,
+        160915456
+      ]
+    },
+    "peak_pagefile_bytes": {
+      "mean": 654938931.2,
+      "sd": 344377.0174022135,
+      "n": 10,
+      "values": [
+        654835712,
+        654278656,
+        654684160,
+        655138816,
+        654979072,
+        654716928,
+        655523840,
+        655265792,
+        654905344,
+        655060992
+      ]
+    },
+    "process_ms": {
+      "mean": 1618.4488900034921,
+      "sd": 25.09583289090198,
+      "n": 10,
+      "values": [
+        1632.448900025338,
+        1598.1495999731123,
+        1659.797600004822,
+        1643.812499998603,
+        1600.8947000082117,
+        1582.696700002998,
+        1603.3176000055391,
+        1597.0723000064027,
+        1634.2937000154052,
+        1632.0052999944892
+      ]
+    },
+    "worker_names": [
+      "python.exe",
+      "python.exe",
+      "python.exe",
+      "python.exe",
+      "python.exe",
+      "python.exe",
+      "python.exe",
+      "python.exe",
+      "python.exe",
+      "python.exe"
+    ],
+    "last_stdout": "MOEGL_STAGE1_MS 625.877\nMOEGL_STAGE2_MS 423.018\nMOEGL_MODELS 500 NODES 21938 EDGES 60292\n"
+  }
+}

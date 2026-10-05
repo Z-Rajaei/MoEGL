@@ -1,0 +1,295 @@
+{
+  "env": {
+    "os": "Windows 10 (10.0.26200)",
+    "machine": "AMD64",
+    "python": "3.10.9",
+    "cpu": "AMD Ryzen 9 4900H with Radeon Graphics",
+    "cores_physical": 8,
+    "cores_logical": 16,
+    "ram_gb": 47.4,
+    "packages": {
+      "pyecore": "0.15.2",
+      "networkx": "3.4.2",
+      "gensim": "4.4.0",
+      "PyYAML": "6.0.3",
+      "pandas": "2.3.3",
+      "numpy": "2.2.6"
+    },
+    "java": "openjdk version \"21.0.3\" 2024-04-16",
+    "storage": "models on local drive E:, results on F:"
+  },
+  "runs": 10,
+  "timestamp": "2026-09-28 12:04:29",
+  "exp1": {
+    "config": "exp1_lopez_ecore.yaml",
+    "stats": {
+      "n_models": 500,
+      "n_skipped": 0,
+      "skipped": [],
+      "avg_objects": 61.358,
+      "avg_references": 159.588,
+      "avg_nodes": 43.876,
+      "avg_edges": 120.528,
+      "total_nodes": 21938,
+      "total_edges": 60264,
+      "node_types": [
+        "EAttribute",
+        "EClass",
+        "EDataType",
+        "EEnum",
+        "EEnumLiteral",
+        "EPackage",
+        "EReference"
+      ],
+      "edge_types": [
+        "eClassifiers",
+        "eContainingClass",
+        "eEnum",
+        "eLiterals",
+        "eOpposite",
+        "ePackage",
+        "eStructuralFeatures",
+        "eSuperTypes",
+        "eType"
+      ]
+    },
+    "fidelity_moegl_vs_published": {
+      "isomorphic": 495,
+      "total": 500,
+      "mismatches": [
+        {
+          "published": "67.json",
+          "model": "68.ecore",
+          "pub_nodes": 32,
+          "moegl_nodes": 32,
+          "pub_edges": 87,
+          "moegl_edges": 86
+        },
+        {
+          "published": "88.json",
+          "model": "89.ecore",
+          "pub_nodes": 376,
+          "moegl_nodes": 376,
+          "pub_edges": 1130,
+          "moegl_edges": 1132
+        },
+        {
+          "published": "115.json",
+          "model": "116.ecore",
+          "pub_nodes": 134,
+          "moegl_nodes": 134,
+          "pub_edges": 383,
+          "moegl_edges": 354
+        },
+        {
+          "published": "186.json",
+          "model": "187.ecore",
+          "pub_nodes": 116,
+          "moegl_nodes": 116,
+          "pub_edges": 349,
+          "moegl_edges": 350
+        },
+        {
+          "published": "215.json",
+          "model": "216.ecore",
+          "pub_nodes": 4,
+          "moegl_nodes": 4,
+          "pub_edges": 7,
+          "moegl_edges": 6
+        }
+      ]
+    },
+    "fidelity_lopez_rerun_vs_published": {
+      "isomorphic": 492,
+      "total": 500,
+      "mismatching_models": [
+        "116.ecore",
+        "163.ecore",
+        "173.ecore",
+        "230.ecore",
+        "388.ecore",
+        "446.ecore",
+        "468.ecore",
+        "481.ecore"
+      ]
+    }
+  },
+  "exp2": {
+    "config": "exp2_rahimi_carwash.yaml",
+    "stats": {
+      "n_models": 11,
+      "n_skipped": 0,
+      "skipped": [],
+      "avg_objects": 40.63636363636363,
+      "avg_references": 139.36363636363637,
+      "avg_nodes": 40.63636363636363,
+      "avg_edges": 139.36363636363637,
+      "total_nodes": 447,
+      "total_edges": 1533,
+      "node_types": [
+        "Bill",
+        "Car",
+        "CarWash",
+        "Person",
+        "Service"
+      ],
+      "edge_types": [
+        "bill",
+        "customer",
+        "hasCar",
+        "hasCustomer",
+        "hasService",
+        "receivedServices",
+        "services"
+      ]
+    }
+  },
+  "exp3": {
+    "config": "exp3_miranda_fsm.yaml",
+    "stats": {
+      "n_models": 1,
+      "n_skipped": 0,
+      "skipped": [],
+      "avg_objects": 101.0,
+      "avg_references": 266.0,
+      "avg_nodes": 100.0,
+      "avg_edges": 130.0,
+      "total_nodes": 100,
+      "total_edges": 130,
+      "node_types": [
+        "State",
+        "Transition"
+      ],
+      "edge_types": [
+        "source",
+        "target"
+      ]
+    }
+  },
+  "timing": {
+    "dataset": "Exp 1: 500 real Ecore metamodels (TCRMG-GNN realModels/Ecore)",
+    "lopez_java": {
+      "encode_ms": {
+        "mean": 1436.73972,
+        "sd": 75.0265951851564,
+        "n": 10,
+        "values": [
+          1387.1493,
+          1385.1063,
+          1424.6732,
+          1524.3887,
+          1612.4701,
+          1410.9137,
+          1405.2729,
+          1441.6696,
+          1374.2763,
+          1401.4771
+        ]
+      },
+      "process_ms": {
+        "mean": 1972.5318499957211,
+        "sd": 88.18173867829704,
+        "n": 10,
+        "values": [
+          1914.056499954313,
+          1897.9411999462172,
+          1980.9037999948487,
+          2058.5367999738082,
+          2173.306900076568,
+          1945.4838000237942,
+          1931.5110000316054,
+          2008.4140000399202,
+          1884.293399984017,
+          1930.8710999321193
+        ]
+      }
+    },
+    "moegl": {
+      "stage1_extract_ms": {
+        "mean": 7577.3051,
+        "sd": 106.87559157205988,
+        "n": 10,
+        "values": [
+          7554.151,
+          7574.307,
+          7579.951,
+          7440.254,
+          7625.842,
+          7638.968,
+          7667.302,
+          7463.234,
+          7451.079,
+          7777.963
+        ]
+      },
+      "stage2_encode_ms": {
+        "mean": 403.57039999999995,
+        "sd": 9.80396007517144,
+        "n": 10,
+        "values": [
+          399.09,
+          396.924,
+          400.209,
+          428.267,
+          403.546,
+          410.503,
+          404.638,
+          394.69,
+          396.888,
+          400.949
+        ]
+      },
+      "stage1_plus_stage2_ms": {
+        "mean": 7980.8755,
+        "sd": 105.84709730681212,
+        "n": 10,
+        "values": [
+          7953.241,
+          7971.231,
+          7980.16,
+          7868.521,
+          8029.388,
+          8049.471,
+          8071.94,
+          7857.924,
+          7847.967,
+          8178.911999999999
+        ]
+      },
+      "process_ms": {
+        "mean": 9115.51852999255,
+        "sd": 112.57252222689554,
+        "n": 10,
+        "values": [
+          9074.231699923985,
+          9089.616799959913,
+          9097.444600076415,
+          9030.950300046243,
+          9171.544899931177,
+          9202.055700006895,
+          9218.149699969217,
+          8972.729200031608,
+          8975.48350004945,
+          9322.978899930604
+        ]
+      }
+    },
+    "moegl_reencode_from_cache_alt_config_ms": {
+      "mean": 1240.4492300120182,
+      "sd": 298.21725983432106,
+      "n": 10,
+      "values": [
+        2079.719200031832,
+        1092.7839999785647,
+        1168.3595000067726,
+        1198.7966001033783,
+        1106.133499997668,
+        1187.185899936594,
+        1096.0805000504479,
+        1187.669700011611,
+        1098.4144000103697,
+        1189.3489999929443
+      ]
+    }
+  }
+}

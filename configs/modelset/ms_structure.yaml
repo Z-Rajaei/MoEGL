@@ -1,0 +1,28 @@
+# ModelSet classification, encoding A: structure only (node and edge types, no attribute values).
+input:
+  format: "ecore"
+  metamodelpath: ""
+  modelspath: "E:/Project/ModelSet/prepared/models"
+output:
+  format: "NetworkX"
+adaptations:
+  metamodels:
+    packages:
+      ecore:
+        uri:
+          http://www.eclipse.org/emf/2002/Ecore:
+            classes:
+              include: ["EPackage", "EClassifier", "EStructuralFeature", "EEnumLiteral", "EOperation", "EParameter"]
+              includeAllAttributes: false
+              EPackage:
+                include: ["eClassifiers", "eSubpackages"]
+              EClass:
+                include: ["eStructuralFeatures", "eSuperTypes", "eOperations"]
+              EEnum:
+                include: ["eLiterals"]
+              ETypedElement:
+                include: ["eType"]
+              EReference:
+                include: ["eOpposite"]
+              EOperation:
+                include: ["eParameters"]

@@ -1,0 +1,1 @@
+tfidf_ffnn fold 0: 0.7312 {'best': "{'hidden_layer_sizes': (50,)}"}

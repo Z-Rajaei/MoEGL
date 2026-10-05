@@ -1,0 +1,6 @@
+hetero_noedges fold 0: 0.7390 {'val': 0.8773974867724869, 'epochs': 29}
+hetero_noedges fold 1: 0.8555 {'val': 0.9144510582010582, 'epochs': 37}
+hetero_noedges fold 2: 0.8656 {'val': 0.8937500000000002, 'epochs': 89}
+hetero_noedges fold 3: 0.8634 {'val': 0.8436011904761905, 'epochs': 42}
+hetero_noedges fold 4: 0.8460 {'val': 0.9004960317460317, 'epochs': 34}
+hetero_noedges fold 5: 0.8164 {'val': 0.8923445767195767, 'epochs': 49}

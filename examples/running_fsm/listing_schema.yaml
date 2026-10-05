@@ -1,0 +1,26 @@
+input:
+  format: "xmi"
+  metamodelpath: "examples/running_fsm/fsm.ecore"
+  modelspath: "examples/running_fsm/models"
+output:
+  format: "NetworkX"
+adaptations:
+  metamodels:
+    packages:
+      FiniteStateMachine:
+        uri:
+          www.fsmmetamodel.com:
+            classes:
+              include: ["FSM", "Transition", "State"]
+              exclude: ["Action"]
+              includeAllAttributes: false
+              FSM:
+                include: ["transitions", "states"]
+                features:
+                  transitions:
+                    renaming: "trans"
+              Transition:
+                include: ["source", "target", "name"]
+                features:
+                  name:
+                    encoding: "RawString"

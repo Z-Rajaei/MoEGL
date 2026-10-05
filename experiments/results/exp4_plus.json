@@ -1,0 +1,38 @@
+{
+  "n": 2074,
+  "n_categories": 48,
+  "protocol": "5-fold x 2 seeds, validation-only C (and embedding weight), LinearSVC. External datatype names not used. Extra TF-IDF capped at 20000.",
+  "paired_graph_vs_names": {
+    "delta_mean": 0.01601341821207889,
+    "delta_sd": 0.017293624017146618,
+    "folds_improved": 8,
+    "folds": 10,
+    "t": 2.9281817752474626,
+    "p_two_sided": 0.016806634688994168
+  },
+  "variants": {
+    "names": {"bal_mean": 0.8075269559309739, "bal_sd": 0.02423480401585517},
+    "names+graph": {
+      "bal_mean": 0.8235403741430527,
+      "bal_sd": 0.024602832148609217,
+      "note": "reproduced exactly on the second run"
+    },
+    "names+graph+e4mde": {
+      "acc_mean": 0.870,
+      "bal_mean": 0.825,
+      "bal_sd": 0.028,
+      "note": "WordE4MDE document vector added no reliable gain over names+graph"
+    },
+    "names+typed_datatypes": {
+      "bal_mean": 0.820475100296529,
+      "bal_sd": 0.020,
+      "note": "recovering EString/EInt did not improve on the untyped graph tokens"
+    }
+  },
+  "published_reference_different_split": {
+    "lopez2022_ffnn_tfidf_nodup": 0.825,
+    "lopez2022_svm_tfidf_nodup": 0.816,
+    "lopez2022_gnn_nodup": 0.808,
+    "worde4mde2023_svm": 0.819
+  }
+}

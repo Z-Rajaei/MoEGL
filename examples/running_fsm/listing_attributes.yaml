@@ -1,0 +1,32 @@
+input:
+  format: "xmi"
+  metamodelpath: "examples/running_fsm/fsm.ecore"
+  modelspath: "examples/running_fsm/models"
+output:
+  format: "HPyG"
+adaptations:
+  metamodels:
+    packages:
+      FiniteStateMachine:
+        uri:
+          www.fsmmetamodel.com:
+            classes:
+              includeAllAttributes: true
+              Transition:
+                features:
+                  name:
+                    encoding: "word2vec"
+                  input:
+                    encoding: "word2vec"
+                  output:
+                    encoding: "word2vec"
+              State:
+                features:
+                  name:
+                    encoding: "word2vec"
+                  type:
+                    encoding: "one-hot"
+              Action:
+                features:
+                  name:
+                    encoding: "word2vec"

@@ -1,0 +1,16 @@
+# Experiment 2 -- replicating the CarWash instance-model encoder of Rahimi et al. (NetGAN for models)
+# Every object becomes a node typed by its class; every reference becomes a typed edge; no attribute values.
+input:
+  format: "xmi"
+  metamodelpath: "F:/Paper Preprocessing/Pre_Processing_Modeling_Artefacts_for_Graph_Neural_Networks__A_DSL_for_Model_Encoding/Codes/MoEGL-v2/metamodels/car_wash/car_wash.ecore"
+  modelspath: "E:/Project/encoding/Encoding1401/DSL-Improved/NetGAN/models"
+output:
+  format: "NetworkX"
+adaptations:
+  metamodels:
+    packages:
+      car_wash:
+        uri:
+          http://www.example.org/car_wash:
+            classes:
+              includeAllAttributes: false

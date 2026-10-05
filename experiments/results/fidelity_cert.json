@@ -1,0 +1,26 @@
+{
+  "ecore": {
+    "published": 500,
+    "moegl": 500,
+    "certified_isomorphic": 500,
+    "same_signature_no_bijection": 0,
+    "unmatched_published": [],
+    "unused_moegl_graphs": 0
+  },
+  "rds": {
+    "published": 500,
+    "moegl": 500,
+    "certified_isomorphic": 500,
+    "same_signature_no_bijection": 0,
+    "unmatched_published": [],
+    "unused_moegl_graphs": 0
+  },
+  "yakindu": {
+    "published": 369,
+    "moegl": 377,
+    "certified_isomorphic": 369,
+    "same_signature_no_bijection": 0,
+    "unmatched_published": [],
+    "unused_moegl_graphs": 8
+  }
+}

@@ -1,0 +1,6 @@
+homo_names fold 0: 0.7963 {'val': 0.887665343915344, 'epochs': 43}
+homo_names fold 1: 0.8057 {'val': 0.878373015873016, 'epochs': 35}
+homo_names fold 2: 0.8405 {'val': 0.8817460317460318, 'epochs': 45}
+homo_names fold 3: 0.8536 {'val': 0.8651951058201058, 'epochs': 51}
+homo_names fold 4: 0.8351 {'val': 0.8924603174603174, 'epochs': 55}
+homo_names fold 5: 0.8052 {'val': 0.8875661375661376, 'epochs': 50}

@@ -1,0 +1,21 @@
+# Experiment 3 -- replicating the FSM encoder of Miranda et al.: only Transition and State objects are
+# nodes, and only the `source` / `target` references of Transition are edges; no attribute values.
+input:
+  format: "xmi"
+  metamodelpath: "F:/Paper Preprocessing/Pre_Processing_Modeling_Artefacts_for_Graph_Neural_Networks__A_DSL_for_Model_Encoding/Codes/MoEGL-v2/metamodels/fsm/statecharts.ecore"
+  modelspath: "E:/Project/encoding/Encoding1401/DSL-Improved/James/instance"
+output:
+  format: "NetworkX"
+adaptations:
+  metamodels:
+    packages:
+      statecharts:
+        uri:
+          statecharts:
+            classes:
+              include: ["Transition", "State"]
+              includeAllAttributes: false
+              Transition:
+                include: ["source", "target"]
+              State:
+                include: []

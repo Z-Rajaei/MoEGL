@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fsm:FSM
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:fsm="www.fsmmetamodel.com">
+  <transitions name="transition1" input="a1" output="b1" source="//@states.0" target="//@states.1">
+    <actions name="action1"/>
+  </transitions>
+  <transitions name="transition2" input="a1" output="b1" source="//@states.1" target="//@states.2">
+    <actions name="action2"/>
+  </transitions>
+  <transitions name="transition3" input="a1" output="b1" source="//@states.2" target="//@states.3">
+    <actions name="action3"/>
+  </transitions>
+  <states name="state1" type="Initial" timeout="1"/>
+  <states name="state2" type="Intermediate" timeout="2"/>
+  <states name="state3" type="Intermediate" timeout="3"/>
+  <states name="state4" type="Final" timeout="4"/>
+</fsm:FSM>

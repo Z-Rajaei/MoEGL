@@ -1,0 +1,33 @@
+# ModelSet classification, encoding D: heterogeneous graph + WordE4MDE names + structural attributes.
+input:
+  format: "ecore"
+  metamodelpath: ""
+  modelspath: "E:/Project/ModelSet/prepared/models"
+output:
+  format: "HPyG"
+adaptations:
+  metamodels:
+    packages:
+      ecore:
+        uri:
+          http://www.eclipse.org/emf/2002/Ecore:
+            classes:
+              include: ["EPackage", "EClassifier", "EStructuralFeature", "EEnumLiteral", "EOperation", "EParameter"]
+              includeAllAttributes: false
+              ENamedElement:
+                include: ["name"]
+                features:
+                  name:
+                    encoding: "worde4mde"
+              EPackage:
+                include: ["eClassifiers", "eSubpackages"]
+              EClass:
+                include: ["abstract", "interface", "eStructuralFeatures", "eSuperTypes", "eOperations"]
+              EEnum:
+                include: ["eLiterals"]
+              ETypedElement:
+                include: ["eType", "lowerBound", "upperBound"]
+              EReference:
+                include: ["containment", "eOpposite"]
+              EOperation:
+                include: ["eParameters"]

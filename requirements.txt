@@ -1,0 +1,10 @@
+lxml
+networkx>=3.0
+pyyaml
+numpy
+gensim
+# optional, only needed for output.format: HPyG
+# torch
+# torch_geometric
+# optional, only for encoding: worde4mde
+# worde4mde

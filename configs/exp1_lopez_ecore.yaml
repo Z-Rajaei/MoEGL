@@ -1,0 +1,36 @@
+# Experiment 1 -- replicating the Ecore encoder of Lopez & Cuadrado (TCRMG-GNN, MetaFilterLiterals.getEcoreFilter)
+# Node classes kept: EClassifier (EClass, EDataType, EEnum), EStructuralFeature (EAttribute, EReference),
+#                    EPackage, EEnumLiteral  -> everything else (EAnnotation, EOperation, EParameter,
+#                    ETypeParameter, EGenericType, EStringToStringMapEntry) is dropped.
+# References kept:   eClassifiers, ePackage, eStructuralFeatures, eContainingClass, eType, eOpposite,
+#                    eSuperTypes, eLiterals, eEnum.
+# Attributes:        none (Lopez keeps only `name`, which is not part of the graph structure).
+input:
+  format: "ecore"
+  metamodelpath: ""            # models are Ecore metamodels; pyecore's built-in Ecore is used
+  modelspath: "E:/Project/TCRMG-GNN-1.0.0/realModels/Ecore"
+output:
+  format: "NetworkX"
+adaptations:
+  metamodels:
+    packages:
+      ecore:
+        uri:
+          http://www.eclipse.org/emf/2002/Ecore:
+            classes:
+              include: ["EClassifier", "EStructuralFeature", "EPackage", "EEnumLiteral"]
+              includeAllAttributes: false
+              EPackage:
+                include: ["eClassifiers"]
+              EClassifier:
+                include: ["ePackage"]
+              EClass:
+                include: ["ePackage", "eStructuralFeatures", "eSuperTypes"]
+              EEnum:
+                include: ["ePackage", "eLiterals"]
+              EEnumLiteral:
+                include: ["eEnum"]
+              EStructuralFeature:
+                include: ["eContainingClass", "eType"]
+              EReference:
+                include: ["eContainingClass", "eType", "eOpposite"]

@@ -1,0 +1,5 @@
+structure fold 0: 0.1676 {'val': 0.25889550264550265, 'epochs': 42}
+structure fold 1: 0.2662 {'val': 0.30988756613756613, 'epochs': 57}
+structure fold 2: 0.2159 {'val': 0.24930555555555553, 'epochs': 55}
+structure fold 3: 0.2341 {'val': 0.30317460317460315, 'epochs': 107}
+structure fold 4: 0.2224 {'val': 0.23045634920634925, 'epochs': 40}

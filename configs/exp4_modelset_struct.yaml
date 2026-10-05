@@ -1,0 +1,31 @@
+# Experiment 4 -- ModelSet Ecore classification, structure only (no attributes).
+# Same class/reference filter as the Lopez Ecore encoder (Listing 6).
+input:
+  format: "ecore"
+  metamodelpath: ""
+  modelspath: "F:/Paper Preprocessing/Pre_Processing_Modeling_Artefacts_for_Graph_Neural_Networks__A_DSL_for_Model_Encoding/Codes/MoEGL-v2/experiments/data/modelset_ecore/models"
+output:
+  format: "NetworkX"
+adaptations:
+  metamodels:
+    packages:
+      ecore:
+        uri:
+          http://www.eclipse.org/emf/2002/Ecore:
+            classes:
+              include: ["EClassifier", "EStructuralFeature", "EPackage", "EEnumLiteral"]
+              includeAllAttributes: false
+              EPackage:
+                include: ["eClassifiers"]
+              EClassifier:
+                include: ["ePackage"]
+              EClass:
+                include: ["ePackage", "eStructuralFeatures", "eSuperTypes"]
+              EEnum:
+                include: ["ePackage", "eLiterals"]
+              EEnumLiteral:
+                include: ["eEnum"]
+              EStructuralFeature:
+                include: ["eContainingClass", "eType"]
+              EReference:
+                include: ["eContainingClass", "eType", "eOpposite"]

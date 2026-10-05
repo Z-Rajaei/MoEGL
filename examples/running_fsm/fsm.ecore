@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    name="FiniteStateMachine" nsURI="www.fsmmetamodel.com" nsPrefix="fsm">
+  <eClassifiers xsi:type="ecore:EDataType" name="String"/>
+  <eClassifiers xsi:type="ecore:EDataType" name="Int"/>
+  <eClassifiers xsi:type="ecore:EEnum" name="StateType">
+    <eLiterals name="Initial" value="0"/>
+    <eLiterals name="Intermediate" value="1"/>
+    <eLiterals name="Final" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="FSM" abstract="false">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="transitions"
+        upperBound="-1" containment="true" eType="#//Transition"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="states"
+        upperBound="-1" containment="true" eType="#//State"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Transition" abstract="false">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="input" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="output" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="source" eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="target" eType="#//State"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="actions"
+        upperBound="1" containment="true" eType="#//Action"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="State" abstract="false">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="timeout" eType="#//Int"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="#//StateType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Action" abstract="false">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" eType="#//String"/>
+  </eClassifiers>
+</ecore:EPackage>

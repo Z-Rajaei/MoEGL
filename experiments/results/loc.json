@@ -1,0 +1,111 @@
+{
+  "moegl_core": {
+    "code": 658,
+    "comment": 88,
+    "blank": 137,
+    "files": 8,
+    "languages": {
+      "Python": 658
+    },
+    "paths": [
+      "Codes\\MoEGL-v2\\moegl"
+    ]
+  },
+  "moegl_config_exp1_ecore": {
+    "code": 29,
+    "comment": 7,
+    "blank": 0,
+    "files": 1,
+    "languages": {
+      "YAML": 29
+    },
+    "paths": [
+      "Codes\\MoEGL-v2\\configs\\exp1_lopez_ecore.yaml"
+    ]
+  },
+  "moegl_config_exp1_rds": {
+    "code": 27,
+    "comment": 9,
+    "blank": 0,
+    "files": 1,
+    "languages": {
+      "YAML": 27
+    },
+    "paths": [
+      "Codes\\MoEGL-v2\\configs\\exp1_lopez_rds.yaml"
+    ]
+  },
+  "moegl_config_exp1_yakindu": {
+    "code": 24,
+    "comment": 10,
+    "blank": 0,
+    "files": 1,
+    "languages": {
+      "YAML": 24
+    },
+    "paths": [
+      "Codes\\MoEGL-v2\\configs\\exp1_lopez_yakindu.yaml"
+    ]
+  },
+  "moegl_config_exp2": {
+    "code": 14,
+    "comment": 2,
+    "blank": 0,
+    "files": 1,
+    "languages": {
+      "YAML": 14
+    },
+    "paths": [
+      "Codes\\MoEGL-v2\\configs\\exp2_rahimi_carwash.yaml"
+    ]
+  },
+  "moegl_config_exp3": {
+    "code": 19,
+    "comment": 2,
+    "blank": 0,
+    "files": 1,
+    "languages": {
+      "YAML": 19
+    },
+    "paths": [
+      "Codes\\MoEGL-v2\\configs\\exp3_miranda_fsm.yaml"
+    ]
+  },
+  "lopez": {
+    "code": 884,
+    "comment": 33,
+    "blank": 215,
+    "files": 11,
+    "languages": {
+      "Java": 869,
+      "Python": 15
+    },
+    "paths": [
+      "Codes\\MoEGL-v2\\experiments\\bespoke_encoders\\lopez"
+    ]
+  },
+  "rahimi": {
+    "code": 249,
+    "comment": 54,
+    "blank": 28,
+    "files": 1,
+    "languages": {
+      "Python": 249
+    },
+    "paths": [
+      "Codes\\MoEGL-v2\\experiments\\bespoke_encoders\\rahimi"
+    ]
+  },
+  "miranda": {
+    "code": 193,
+    "comment": 98,
+    "blank": 65,
+    "files": 3,
+    "languages": {
+      "Python": 193
+    },
+    "paths": [
+      "Codes\\MoEGL-v2\\experiments\\bespoke_encoders\\miranda"
+    ]
+  }
+}

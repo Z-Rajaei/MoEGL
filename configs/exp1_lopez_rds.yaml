@@ -1,0 +1,36 @@
+# Experiment 1 -- replicating the RDS encoder of Lopez & Cuadrado (TCRMG-GNN,
+# MetaFilterNames.getRDSFilter()).
+# Dataset: 500 relational-schema XMI models (realModels/RDS), instances of the
+# rds metamodel (metamodels/rds/rds_manual.ecore, nsURI com.genmymodel.rds.core).
+# Node classes kept: Database, Table, Column, Index, IndexColumn, Reference.
+# References kept:   elements, columns, indexes, indexColumns, column,
+#                    foreignReferences, primaryReferences,
+#                    foreignKeyColumns, primaryKeyColumns.
+# Attributes:        none in the graph structure (as in the published graphs).
+input:
+  format: "xmi"
+  metamodelpath: "F:/Paper Preprocessing/Pre_Processing_Modeling_Artefacts_for_Graph_Neural_Networks__A_DSL_for_Model_Encoding/Codes/MoEGL-v2/metamodels/rds/rds_manual.ecore"
+  modelspath: "E:/Project/TCRMG-GNN-1.0.0/realModels/RDS"
+output:
+  format: "NetworkX"
+adaptations:
+  metamodels:
+    packages:
+      rds:
+        uri:
+          http://com.genmymodel.rds.core/1.0:
+            classes:
+              include: ["Database", "Table", "Column", "Index", "IndexColumn", "Reference"]
+              includeAllAttributes: false
+              Database:
+                include: ["elements"]
+              Table:
+                include: ["columns", "indexes"]
+              Column:
+                include: ["foreignReferences", "primaryReferences"]
+              Reference:
+                include: ["foreignKeyColumns", "primaryKeyColumns"]
+              Index:
+                include: ["indexColumns"]
+              IndexColumn:
+                include: ["column"]
