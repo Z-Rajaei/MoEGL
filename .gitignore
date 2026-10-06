@@ -4,3 +4,4 @@ __pycache__/
 pytest-cache-files-*/
 experiments/data/
 experiments/user_study_pilot/
+paper/
